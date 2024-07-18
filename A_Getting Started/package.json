@@ -1,11 +1,10 @@
 {
-  "name": "router-in-express",
+  "name": "a_getting-started",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon app"
+    "start": "nodemon index"
   },
-  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",

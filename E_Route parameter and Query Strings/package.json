@@ -1,9 +1,9 @@
 {
-  "name": "express-starter",
+  "name": "e_route-parameter-and-query-strings",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app"
+    "dev": "nodemon app" 
   },
   "keywords": [],
   "author": "",

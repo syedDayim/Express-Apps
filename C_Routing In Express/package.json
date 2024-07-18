@@ -1,12 +1,13 @@
 {
-  "name": "getting-started",
+  "name": "c_routing-in-express",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index"
+    "dev": "nodemon app"
   },
   "keywords": [],
   "author": "",
+  "type": "module",
   "license": "ISC",
   "description": "",
   "dependencies": {
