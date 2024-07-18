@@ -34,6 +34,21 @@ app.get('/chained', (req, res, next) => {
     res.locals.message += ' -> Third Middleware';
     res.send(res.locals.message);
 });
+app.get("/coin", (req, res) => {
+    const noOfHeads = 0;
+    const noOfTails = 0;
+
+    const randomNumber = Math.floor(Math.random() * 2);
+    if(randomNumber == 0){
+        res.send('Heads');
+    
+    }
+    else{
+        res.send("Tails");
+    }
+})
+
+
 
 
 
