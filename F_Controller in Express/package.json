@@ -1,12 +1,13 @@
 {
-  "name": "a_getting-started",
+  "name": "f_controller-in-express",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon index"
+    "dev" : "nodemon app"
   },
   "keywords": [],
   "author": "syedDayim",
+  "type": "module",
   "license": "ISC",
   "description": "",
   "dependencies": {
