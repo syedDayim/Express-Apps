@@ -1,13 +1,17 @@
 const indexController = (req, res) =>{
     const data = {
         'title': 'index page',
-        'message': 'Hello world',
+        'message': 'Index Page',
     }
     res.render('index', {'data' : data});
 }
 
 const aboutController = (req, res) => {
-    res.render('about');
+    const data = {
+        'title': 'about page',
+        'message': 'About Page',
+    }
+    res.render('about', {'data' : data});
 };
 
 
