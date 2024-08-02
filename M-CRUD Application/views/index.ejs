@@ -1,0 +1,133 @@
+<%- include('./partials/header.ejs') %>
+
+    <div class="container mt-5 p-5"
+        style="background-color: #1b1b1b; border-radius: 15px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2 class="text-light mb-4">Add New Entry</h2>
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="entryName" class="form-label text-light">Name</label>
+                        <input type="text" class="form-control bg-dark text-light" id="entryName"
+                            placeholder="Enter name" name="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="entryAge" class="form-label text-light">Age</label>
+                        <input type="text" class="form-control bg-dark text-light" id="entryAge" placeholder="Enter age"
+                            name="age">
+                    </div>
+                    <div class="mb-3">
+                        <label for="entryFees" class="form-label text-light">Fees</label>
+                        <input type="text" class="form-control bg-dark text-light" id="entryFees"
+                            placeholder="Enter fees" name="fees">
+                    </div>
+                    <button type="submit" class="btn btn-outline-light">Submit</button>
+                </form>
+            </div>
+            <div class="col-sm-6">
+                <h2 class="text-light mb-4">All Entries</h2>
+                <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                    <table class="table table-hover text-light">
+                        <thead style="background-color: #333;">
+                            <tr>
+                                <th scope="col">S.No</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Age</th>
+                                <th scope="col">Fees</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% var i=1 %>
+                                <!-- Entries will be dynamically added here -->
+                                <% result.forEach(entry=> { %>
+                                    <tr style="background-color: #2b2b2b;">
+                                        <th scope="row">
+                                            <%= i++ %>
+                                        </th>
+                                        <td>
+                                            <%= entry.name %>
+                                        </td>
+                                        <td>
+                                            <%= entry.age %>
+                                        </td>
+                                        <td>
+                                            <%= entry.fees%>
+                                        </td>
+                                        <td>
+                                            <div class="btn-container d-flex">
+
+                                                <form action="/edit/<%= entry._id%>">
+                                                    <button class="btn btn-outline-warning btn-sm">Edit</button>
+                                                </form>
+
+                                                <form method="post" action="/delete/<%= entry._id%>">
+                                                    <button class="btn btn-outline-danger btn-sm ms-3">Delete</button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                                        <!-- More entries -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+
+        <style>
+            body {
+                background-color: #121212;
+                font-family: 'Roboto', sans-serif;
+            }
+
+            h2 {
+                font-weight: 700;
+            }
+
+            .container {
+                padding: 40px;
+            }
+
+            .form-control,
+            .btn {
+                border-radius: 25px;
+            }
+
+            .form-control {
+                border: 1px solid #444;
+            }
+
+            .btn-outline-light {
+                border: 1px solid #fff;
+            }
+
+            .table-responsive {
+                margin-top: 20px;
+            }
+
+            .table-hover tbody tr:hover {
+                background-color: #333;
+            }
+
+            .table thead th {
+                border-bottom: 1px solid #444;
+            }
+
+            .table tbody td {
+                border-top: 1px solid #444;
+            }
+
+            .btn-outline-warning {
+                color: #ffc107;
+                border: 1px solid #ffc107;
+            }
+
+            .btn-outline-danger {
+                color: #dc3545;
+                border: 1px solid #dc3545;
+            }
+        </style>
